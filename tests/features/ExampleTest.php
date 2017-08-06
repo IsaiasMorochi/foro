@@ -18,7 +18,7 @@ class ExampleTest extends FeatureTestCase
      *
      * @return void
      */
-    
+
     function test_basic_example()
     {
         $name = 'Isaias Morochi';
