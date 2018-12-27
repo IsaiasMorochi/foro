@@ -2,10 +2,16 @@
 
 namespace Tests;
 
+use App\User;
 use Illuminate\Contracts\Console\Kernel;
+
 
 trait CreatesApplication
 {
+    /**
+     * @var \App\User
+     */
+     protected  $defaultUser;
     /**
      * Creates the application.
      *
@@ -19,4 +25,13 @@ trait CreatesApplication
 
         return $app;
     }
+
+    public function defaultUser(){
+
+        if($this->defaultUser){
+            return $this->defaultUser;
+        }
+        return $this->defaultUser = factory(User::class)->create();
+    }
+
 }
